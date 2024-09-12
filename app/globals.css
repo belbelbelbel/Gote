@@ -10,12 +10,20 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f4f4f0;
   }
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f0;
+  font-family: ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+.Account_slide::-webkit-scrollbar {
+  width: 0;
+}
+
+input::placeholder {
+  color: rgb(85, 83, 83);
 }
 
 @layer utilities {
