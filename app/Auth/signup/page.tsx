@@ -5,8 +5,10 @@ import Signin from '../login/page';
 import { InputFields } from '@/app/Component/InputFields';
 import { ButtonField } from '@/app/Component/ButtonField';
 import { FormDataCreateAcount, isFormFilled } from '@/app/Utils/@types';
+import { useRouter } from 'next/navigation';
 
 export default function Signup(){
+  const Router = useRouter()
   const [formData, setFormData] = useState<FormDataCreateAcount | any>({
     firstName: '',
     lastName: '',
@@ -24,9 +26,14 @@ export default function Signup(){
   const isFilledForm = isFormFilled(formData);
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!isFilledForm) {
+    if (!isFilledForm || formData.password!== formData.confirmPassword) {
       toast.error("please fill in all form")
       return;
+    }
+    else {
+      Router.push('/purchase')
+      toast.success('Logged in successfully')
+      setFormData({})
     }
     if (formData.password!== formData.confirmPassword) {
       toast.error("Passwords do not match")
@@ -68,9 +75,8 @@ export default function Signup(){
             </div>
           </div>
           <div className='w-full  items-center  justify-center xl:pb-0 pb-8 flex text-white'>
-            <ButtonField label="Create Account" width="xl:w-full w-[78%]" />
+            <ButtonField type="submit" label="Create Account" width="xl:w-full w-[78%]" />
           </div>
-
         </form>
       </div>
     </div>

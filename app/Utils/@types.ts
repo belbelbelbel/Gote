@@ -1,9 +1,12 @@
 export type ImageData = {
     src: string,
     alt: string,
-    sizes:string,
+    sizes: string,
     objectFit: string,
-    priority:true
+    width: number,
+    height: number,
+    priority: boolean,
+    className?: string,
 }
 export type FormData = {
     email: string,
@@ -25,8 +28,8 @@ export type FormDataCreateAcount = {
 export const isFormFilled = (formData: Record<string, string>): boolean => {
     // Check if all values in the formData are truthy (i.e., not empty or undefined)
     return Object.values(formData).every((value) => value.trim() !== '');
-  };
-  
+};
+
 
 export type FormDataField = {
     type: string,
@@ -37,7 +40,14 @@ export type FormDataField = {
     width: string
 }
 
+export type ButtonContent = {
+    reset: string,
+    submit: string,
+    button: string
+}
+
 export type buttonFields = {
     label: string,
-    width:string
+    width: string,
+    type: "reset" | "submit" | "button" | undefined,
 }
