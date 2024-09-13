@@ -18,6 +18,7 @@ export default function Signup(){
     password: '',
     confirmPassword: '',
   })
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
