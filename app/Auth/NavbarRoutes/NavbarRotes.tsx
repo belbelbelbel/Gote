@@ -4,11 +4,11 @@ export default function NavbarrRoutes () {
   return (
     <div className=''>
         <ul className='flex gap-3 items-center'>
-            <li>Shop</li>
-            <li>About</li>
-            <li>Service</li>
-            <li>Products</li>
-            <li></li>
+            <li className='cursor-pointer'>Shop</li>
+            <li className='cursor-pointer'>About</li>
+            <li className='cursor-pointer'>Service</li>
+            <li className='cursor-pointer'>Products</li>
+            <li className='cursor-pointer'></li>
         </ul>
     </div>
   )

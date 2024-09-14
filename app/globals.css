@@ -37,7 +37,7 @@ input::placeholder {
 .video-container {
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 98vh;
   overflow: hidden;
   background-color: #0c0c0c;
 }
@@ -101,7 +101,7 @@ input::placeholder {
 }
 
 .content_container {
-  background: linear-gradient(170.7deg, #f4f4f0 60%, black 40%);
+  background: linear-gradient(170.7deg, #f4f4f0 60%, #e7e7e3 40%);
 }
 .text-area {
   text-align: center;
