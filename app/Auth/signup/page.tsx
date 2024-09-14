@@ -27,8 +27,12 @@ export default function Signup(){
   const isFilledForm = isFormFilled(formData);
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!isFilledForm || formData.password!== formData.confirmPassword) {
+    if (!isFilledForm) {
       toast.error("please fill in all form")
+      return;
+    }
+    else if (formData.password!== formData.confirmPassword)  {
+      toast.error("Passwords do not match")
       return;
     }
     else {
@@ -36,10 +40,7 @@ export default function Signup(){
       toast.success('Logged in successfully')
       setFormData({})
     }
-    if (formData.password!== formData.confirmPassword) {
-      toast.error("Passwords do not match")
-      return;
-    }
+    
     console.log('Form submitted with data:', formData)
   }
 
