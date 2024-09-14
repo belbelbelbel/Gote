@@ -35,8 +35,8 @@ export default function Signin() {
       return;
     }
     else {
-      Router.push('/purchase')
       toast.success('Logged in successfully')
+      Router.push('/purchase')
       setFormdata({ email: '', password: '' })
     }
     console.log('Form submitted with data:', formData)
@@ -46,7 +46,7 @@ export default function Signin() {
 
     <div className='h-[100dvh] w-screen flex-col gap-4 flex justify-center items-center'>
       <div className='cursor-pointer  flex items-center top-0 w-full  fixed z-50 md:bg-transaparent bg-[#f4f4f0] md:h-[10%] h-[15%]  justify-center flex' onClick={() => setCraeteAccountModal(false)}>
-        <ImageField src='/images/gote-logo-removebg.png' alt='Logo' sizes='' objectFit='cover' width={180} height={100} priority={true} className='fixed   z-50 md:left-10 left-20  top-5  md:top-10' />
+        <ImageField src={'/images/gote-logo-removebg.png'} alt='Logo' sizes='' objectFit='cover' width={180} height={100} priority={true} className='fixed   z-50 md:left-10 left-20  top-5  md:top-10' />
       </div>
       <div><Toaster /></div>
       <div className='xl:w-[39%] mx-auto flex flex-col gap-2 items-center text-center xl:items-start'>
