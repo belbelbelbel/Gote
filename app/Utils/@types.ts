@@ -7,6 +7,8 @@ export type ImageData = {
     height: number,
     priority: boolean,
     className?: string,
+    onMouseEnter?: () => void,
+    onMouseLeave?: () => void,
 }
 export type FormData = {
     email: string,
