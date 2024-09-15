@@ -15,6 +15,13 @@ export type FormData = {
     password: string,
 }
 
+export type ImgArrrayProps = {
+    id: number;
+    src: string;
+    alt: string;
+    sizes: string;
+    objectFit: string;
+  };
 
 
 export type FormDataCreateAcount = {
