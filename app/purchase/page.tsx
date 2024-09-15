@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import { ImgArrayContent } from '../sections/ImgArray-Content'
 export default function PurchasePage() {
     const videoRef = useRef(null);
-   
+
 
     return (
         <div className='w-screen h-[100vh] overflow-auto'>
@@ -17,8 +17,10 @@ export default function PurchasePage() {
                     <Image src={'/images/gote-logo-removebg.png'} alt='Logo' width={135} height={50} priority={true} sizes={''} objectFit={'cover'} />
                     {/* <img src="/images/gote-logo-removebg.png" alt="logo"  width={135} height={50} /> */}
                 </div>
-                <div className='md:block hidden '>
-                    <NavbarrRoutes />
+                <div className=' '>
+                    <div className='md:block hidden'>
+                        <NavbarrRoutes />
+                    </div>
                 </div>
                 <div className=' md:flex hidden  items-center gap-6'>
                     <div className='cursor-pointer'>Account</div>
@@ -51,10 +53,10 @@ export default function PurchasePage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0, type: 'spring', stiffness: 100 }}
                 >
-                    <h2>Discover Your Next Favorite Product</h2>
+                    <h2 className='md:text-[2.5rem] text-[1.8rem]'>Discover Your Next Favorite Product</h2>
                     <p>Explore our collection of top-quality items, curated just for you.</p>
                 </motion.div>
-                <ImgArrayContent/>
+                <ImgArrayContent />
 
             </div>
         </div>

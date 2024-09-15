@@ -67,21 +67,6 @@ input::placeholder {
   z-index: 2;
 }
 
-/* .heart-container {
-  background-color: lightpink;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.heart-container svg {
-  fill: red; 
-  width: 80px;
-  height: 80px;
-} */
 
 
 .slogan {
@@ -140,7 +125,6 @@ input::placeholder {
 }
 
 .text-area h2 {
-  font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
 }
@@ -149,3 +133,5 @@ input::placeholder {
   font-size: 1.2rem;
   line-height: 1.6;
 }
+
+
