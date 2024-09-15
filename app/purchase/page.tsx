@@ -17,10 +17,10 @@ export default function PurchasePage() {
                     <Image src={'/images/gote-logo-removebg.png'} alt='Logo' width={135} height={50} priority={true} sizes={''} objectFit={'cover'} />
                     {/* <img src="/images/gote-logo-removebg.png" alt="logo"  width={135} height={50} /> */}
                 </div>
-                <div>
+                <div className='md:block hidden '>
                     <NavbarrRoutes />
                 </div>
-                <div className='flex items-center gap-6'>
+                <div className=' md:flex hidden  items-center gap-6'>
                     <div className='cursor-pointer'>Account</div>
                     <div className='flex font-medium justify-center items-center gap-8 cursor-pointer'>
                         <div><FaCartArrowDown className='text-[1.8rem]' /></div>

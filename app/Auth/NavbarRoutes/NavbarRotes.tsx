@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function NavbarrRoutes () {
   return (
-    <div className=''>
+    <div className=' '>
         <ul className='flex gap-3 items-center'>
             <li className='cursor-pointer'>Shop</li>
             <li className='cursor-pointer'>About</li>

@@ -41,7 +41,7 @@ export const ImgArrayContent = () => {
               alt={img.alt}
               sizes={''}
               objectFit={img.objectFit}
-              className='cursor-pointer z-20 w-[22.5vw] h-[53vh] rounded-[15px]'
+              className='cursor-pointer z-20 xl:w-[22.5vw] w-[70vw] h-[53vh] rounded-[15px]'
               width={230}
               height={100}
               priority={true}
@@ -50,7 +50,7 @@ export const ImgArrayContent = () => {
 
           {imageContents === img.id && (
             <motion.div
-              className='flex w-[22.5vw] h-full transition ease-out duration-300 absolute hover:bg-black hover:bg-opacity-30 text-white text-[4vw] items-center justify-center gap-4 cursor-pointer rounded-[15px]'
+              className='flex xl:w-[22.5vw] w-[70vw] h-[53vh] xl:h-full transition ease-out duration-300 absolute hover:bg-black hover:bg-opacity-30 text-white text-[4vw] items-center justify-center gap-4 cursor-pointer rounded-[15px]'
             >
               <div className="heart-container absolute top-4 right-4">
                 <svg

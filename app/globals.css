@@ -52,6 +52,8 @@ input::placeholder {
   z-index: 1;
 }
 
+
+
 .video-overlay {
   position: absolute;
   top: 0;
@@ -101,6 +103,14 @@ input::placeholder {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s infinite linear;
+}
+
+@media screen and (max-width: 768px) {
+  .slogan {
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
+    font-size: 1.2rem;
+    padding: 0px;
+  }
 }
 
 @keyframes shine {
