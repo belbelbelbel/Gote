@@ -18,7 +18,6 @@ export const ImgArrayContent = () => {
 
         if (likedImage) {
             if (addLike.some((img) => img.id === id)) {
-                // toast.error(`Unliking image with id: ${id}`);
                 setAddLike(addLike.filter((img) => img.id !== id));
                 console.log("Updated liked images:", addLike.filter((img) => img.id !== id));
             } else {
@@ -79,9 +78,9 @@ export const ImgArrayContent = () => {
                                 animate={{ opacity: 1, y: 50 }}
                                 transition={{ duration: 0.5, ease: 'easeInOut', type: 'spring', stiffness: 100 }}
 
-                                className='items-center  flex-col  md:gap-2 flex w-[90%] justify-center'>
+                                className='items-center  flex-col  md:gap-4 flex w-[90%] justify-center'>
                                 <div className='text-[1rem] text-center'>{img.description}</div>
-                                <button className='bg-black text-[1.2rem] hover:bg-opacity-80  rounded-[8px] h-[7vh]  w-full h-[5vh]'>See More</button>
+                                <button className='bg-black text-[1rem] hover:bg-opacity-80  rounded-[8px] h-[6vh]  w-[70%] mx-auto h-[5vh]'>See More</button>
                             </motion.div>
                         </motion.div>
                     )}

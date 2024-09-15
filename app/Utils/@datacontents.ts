@@ -10,3 +10,9 @@ export const navItems = [
     { name: 'Service', href: '/service' },
     { name: 'Products', href: '/products' }
   ];
+
+  export const FooterItems = [
+    { name: 'PRIVACY POLICY', href: '/privacy-policy' },
+    { name: 'TERMS & CONDITIONS', href: 'conditions' },
+    { name: 'ABOUT', href: '/about' },
+  ];
