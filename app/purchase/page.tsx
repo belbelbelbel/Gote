@@ -13,7 +13,7 @@ export default function PurchasePage() {
 
 
     return (
-        <div className='w-screen h-[100vh] overflow-auto'>
+        <div className='w-screen xl:h-[100vh] h-[200vh] overflow-auto'>
             <Header />
             <div className='video-container'>
                 <video
@@ -42,7 +42,6 @@ export default function PurchasePage() {
                     <p>Explore our collection of top-quality items, curated just for you.</p>
                 </motion.div>
                 <ImgArrayContent />
-
             </div>
             <Footer/>
         </div>

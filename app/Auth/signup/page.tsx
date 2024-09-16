@@ -1,13 +1,16 @@
 "use client"
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import Signin from '../login/page';
+import Signin from '../auths/page';
 import { InputFields } from '@/app/Component/InputFields';
 import { ButtonField } from '@/app/Component/ButtonField';
 import { FormDataCreateAcount, isFormFilled } from '@/app/Utils/@types';
 import { useRouter } from 'next/navigation';
 
-export default function Signup(){
+interface ModalProps {
+   setCraeteAccountModal: (createAccountModal:boolean) => void
+}
+export default function Signup({setCraeteAccountModal}:ModalProps){
   const Router = useRouter()
   const [formData, setFormData] = useState<FormDataCreateAcount | any>({
     firstName: '',
@@ -36,7 +39,7 @@ export default function Signup(){
       return;
     }
     else {
-      Router.push('/purchase')
+      Router.push('/')
       toast.success('Logged in successfully')
       setFormData({})
     }
@@ -80,6 +83,7 @@ export default function Signup(){
             <ButtonField type="submit" label="Create Account" width="xl:w-full w-[78%]" />
           </div>
         </form>
+        <div className='mt-3'>Already have an account ? <span className='underline cursor-pointer leading-0 tracking-0 ' onClick={() => setCraeteAccountModal(false)}>Sign in</span> </div>
       </div>
     </div>
   );

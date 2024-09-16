@@ -36,7 +36,7 @@ export default function Signin() {
     }
     else {
       toast.success('Logged in successfully')
-      Router.push('/purchase')
+      Router.push('/')
       setFormdata({ email: '', password: '' })
     }
     console.log('Form submitted with data:', formData)
@@ -78,7 +78,7 @@ export default function Signin() {
             transition={{ type: 'spring', damping: 10, stiffness: 50 }}
             exit={{ opacity: 0, y: 300 }}
             className='flex flex-col gap-2 overflow-auto xl:pt-0  pt-[8rem] Account_slide  h-full inset-0 absolute md:fixed w-full  bg-[#f4f4f0] justify-center items-center text-center mx-auto' >
-            <Signup />
+            <Signup  setCraeteAccountModal={setCraeteAccountModal}/> 
           </motion.div>
         }
       </AnimatePresence>

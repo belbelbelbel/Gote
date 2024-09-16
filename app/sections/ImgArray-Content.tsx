@@ -29,7 +29,7 @@ export const ImgArrayContent = () => {
     };
 
     return (
-        <div className='w-full flex xl:flex-row flex-col gap-8 relative items-center justify-evenly'>
+        <div className='w-full flex xl:flex-row flex-col xl:gap-8 md:gap-16 gap-10 relative items-center justify-evenly'>
             <Toaster />
             {ImgArray.map((img) => (
                 <motion.div
@@ -47,7 +47,7 @@ export const ImgArrayContent = () => {
                             alt={img.alt}
                             sizes={''}
                             objectFit={img.objectFit}
-                            className='cursor-pointer z-20 xl:w-[22.5vw] md:h-[50vh]  w-[70vw] h-[43vh] rounded-[15px]'
+                            className='cursor-pointer z-20 xl:w-[22.5vw] md:h-[46vh]  md:w-[29rem]  w-[70vw] h-[43vh] rounded-[15px]'
                             width={230}
                             height={100}
                             priority={true}
@@ -56,7 +56,7 @@ export const ImgArrayContent = () => {
 
                     {imageContents === img.id && (
                         <motion.div
-                            className='flex xl:w-[22.5vw] w-[70vw] h-[43vh] md:h-[50vh] xl:h-full transition ease-out duration-300 absolute hover:bg-black hover:bg-opacity-40 text-white text-[4vw] items-center justify-center gap-4 cursor-pointer rounded-[15px]'
+                            className='flex xl:w-[22.5vw] md:w-[29rem] w-[70vw] h-[43vh] md:h-[46vh] xl:h-full transition ease-out duration-300 absolute hover:bg-black hover:bg-opacity-40 text-white text-[4vw] items-center justify-center gap-4 cursor-pointer rounded-[15px]'
                         >
                             <div className="heart-container absolute top-4 right-4">
                                 <svg
