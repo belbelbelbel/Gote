@@ -11,8 +11,8 @@ const AboutPage = () => {
       <div className='block relative'>
         <Header />
       </div>
-      <div className='mt-20 w-[84%] flex flex-col  About_text mx-auto'>
-        <div className='text-[10vw]  '>About Us</div>
+      <div className='mt-20 w-[70%] flex flex-col  About_text mx-auto'>
+        <div className='text-[8vw]  '>About Us</div>
         <div className='tracking-[1px] text-[1.1rem]'>
           Welcome to GOTE, your number one destination for online shopping. At GOTE, we are committed to providing our customers with the best in quality, service, and innovation. Whether you’re looking for the latest fashion, cutting-edge electronics, home essentials, or exclusive deals, GOTE is here to meet all your needs with ease and convenience.
         </div>
