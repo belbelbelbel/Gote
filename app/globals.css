@@ -14,6 +14,11 @@
   }
 }
 
+@font-face {
+  font-family: AboutFont;
+  src: url(../app/fonts/Recoleta-RegularDEMO.otf);
+}
+
 body {
   background-color: #f4f4f0;
   font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -113,7 +118,7 @@ input::placeholder {
 }
 
 .About_text {
-  font-family: Recoleta, Georgia, sans-serif
+  font-family: AboutFont;
 }
 
 .slide-out {
@@ -135,7 +140,7 @@ input::placeholder {
   height: 100vh;
   display: flex;
   justify-content: center;
-  font-family: "Roslindale Display Condensed";
+  font-family: AboutFont;
   align-items: center;
   background: rgb(13, 13, 13);
   transform-origin: bottom;

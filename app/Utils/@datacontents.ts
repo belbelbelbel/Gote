@@ -7,8 +7,7 @@ export const ImgArray = [
 export const navItems = [
     { name: 'Shop', href: '/shop' },
     { name: 'About', href: '/about' },
-    { name: 'Service', href: '/service' },
-    { name: 'Products', href: '/products' }
+    { name: 'Service & FAQ', href: '/service' },
   ];
 
   export const FooterItems = [

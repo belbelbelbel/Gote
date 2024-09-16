@@ -13,7 +13,7 @@ export const Footer = () => {
   const [email, setEmail] = useState('')
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
-    toast.success('Email Subscribed Successfully!')
+    toast.success('Subscrition Successfull')
     setEmail('')
   }
   return (
@@ -47,14 +47,14 @@ export const Footer = () => {
           </div>
           <div className='flex flex-col  items-center gap-6'>
             <div className='tracking-[3px]'>WEEKLY NEWSLETTER</div>
-            <form >
+            <form onSubmit={handleSubmit}>
               <div className='flex items-center  h-[6vh] w-[22rem] md:w-[28rem] xl:w-[23rem] border-2 border-black'>
                 <div className=' w-full mx-auto px-4'>
                   <input type="text" value={email} name='email' placeholder='email...' className='w-full outline-0 bg-transparent rounded-[7px] h-full border-black ' onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} />
                 </div>
                 <div className='bg-black h-full w-[2.5px]'></div>
                 <div className='hover:text-white h-full item-center  flex hover:bg-black'>
-                  <button className='px-2 text-center text-[0.9rem] '>Subscribe</button>
+                  <button className='px-2 text-center text-[0.9rem] ' type='submit'>Subscribe</button>
                 </div>
               </div>
             </form>
