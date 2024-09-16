@@ -7,10 +7,8 @@ import { ButtonField } from '@/app/Component/ButtonField';
 import { FormDataCreateAcount, isFormFilled } from '@/app/Utils/@types';
 import { useRouter } from 'next/navigation';
 
-interface ModalProps {
-   setCraeteAccountModal: (createAccountModal:boolean) => void
-}
-export default function Signup({setCraeteAccountModal}:ModalProps){
+
+export default function Signup({setCraeteAccountModal}:any){
   const Router = useRouter()
   const [formData, setFormData] = useState<FormDataCreateAcount | any>({
     firstName: '',
