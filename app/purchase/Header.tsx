@@ -19,7 +19,7 @@ export const Header = () => {
                 <div className='cursor-pointer'>Account</div>
                 <div className='flex font-medium justify-center items-center gap-8 cursor-pointer'>
                     <div><FaCartArrowDown className='text-[1.8rem]' /></div>
-                    <div className='border-2 border-black hover:border-green-800 transition ease-in duration-500 text-center py-[0.6vw] rounded-full w-[3.4vw] font-bold'>10</div>
+                    <div className='border-2 border-black hover:border-green-800 transition ease-in duration-500 text-center py-[0.6vw] rounded-full w-[3.4vw] font-bold'>0</div>
                 </div>
             </div>
         </div>

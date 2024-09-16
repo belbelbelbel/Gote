@@ -16,3 +16,9 @@ export const navItems = [
     { name: 'TERMS & CONDITIONS', href: 'conditions' },
     { name: 'ABOUT', href: '/about' },
   ];
+
+  export const FooterItems2 = [
+    { name: 'SHIPPING INFO', href: '/privacy-policy' },
+    { name: 'RETURNS / EXCHANGES', href: 'conditions' },
+    { name: 'CONTACT', href: '/about' },
+  ];
