@@ -16,7 +16,7 @@ const AboutPage = () => {
         <div className='tracking-[1px] text-[1.1rem]'>
           Welcome to GOTE, your number one destination for online shopping. At GOTE, we are committed to providing our customers with the best in quality, service, and innovation. Whether you’re looking for the latest fashion, cutting-edge electronics, home essentials, or exclusive deals, GOTE is here to meet all your needs with ease and convenience.
         </div>
-        <div className='flex items-center justify-end mt-8 gap-2'>
+        <div className='flex xl:flex-row flex-col items-center justify-end mt-8 gap-2'>
           <ImageField src={'/images/aboutus1.jpg'} alt='Logo' sizes='' objectFit='cover' width={380} height={100} priority={true} className='h-[50vh] cursor-pointer rounded-[7px]' />
           <ImageField src={'/images/aboutus2.jpg'} alt='Logo' sizes='' objectFit='cover' width={380} height={100} priority={true} className='h-[50vh] cursor-pointer rounded-[7px]' />
         </div>
