@@ -7,9 +7,9 @@ import { Faqs } from '../sections/Faqs'
 
 const ServicePage = () => {
     return (
-        <div className="flex flex-col gap-20  About_text tracking-[1px] w-screen h-screen">
+        <div className="flex flex-col gap-20    w-screen h-screen">
             <Header />
-            <div className='w-[79%] mt-40  mx-auto '>
+            <div className='w-[79%] mt-40 tracking-[1px] About_text mx-auto '>
 
                 <h1 className="text-[6vw] mb-4 text-centser About_text">Our Services</h1>
                 <div className='w-[92%] mx-auto'>
