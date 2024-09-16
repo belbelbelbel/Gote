@@ -8,7 +8,9 @@ export const Header = () => {
     return (
         <div className='fixed px-8 w-full flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[14vh]'>
             <div className='cursor-pointer relative'>
-                <Image src={'/images/gote-logo-removebg.png'} alt='Logo' width={135} height={50} priority={true} sizes={''} objectFit={'cover'} />
+                <Link href='/'>
+                    <Image src={'/images/gote-logo-removebg.png'} alt='Logo' width={135} height={50} priority={true} sizes={''} objectFit={'cover'} />
+                </Link>
                 {/* <img src="/images/gote-logo-removebg.png" alt="logo"  width={135} height={50} /> */}
             </div>
             <div className=' '>

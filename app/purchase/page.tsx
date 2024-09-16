@@ -6,8 +6,8 @@ import NavbarrRoutes from '../Auth/NavbarRoutes/NavbarRotes'
 import { FaCartArrowDown } from "react-icons/fa";
 import { motion } from 'framer-motion';
 import { ImgArrayContent } from '../sections/ImgArray-Content'
-import { Header } from './Header'
-import { Footer } from './Footer'
+import { Header } from '../sections/Header'
+import { Footer } from '../sections/Footer'
 export default function PurchasePage() {
     const videoRef = useRef(null);
 
@@ -34,7 +34,7 @@ export default function PurchasePage() {
             <div className='content_container h-full w-[88%] items-center justify-center  mx-auto'>
                 <motion.div
                     className='text-area'
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 1, scale: 1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0, type: 'spring', stiffness: 100 }}
                 >

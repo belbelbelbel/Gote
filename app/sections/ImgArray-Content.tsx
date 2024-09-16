@@ -35,11 +35,11 @@ export const ImgArrayContent = () => {
                 <motion.div
                     key={img.id}
                     className='flex'
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 1, x: 0 }}
                     onMouseLeave={handleRemoveImageContent}
                     onMouseEnter={() => handleShowImageContent(img.id)}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, ease: 'easeInOut', type: 'spring', stiffness: 100 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut', type: 'spring', stiffness: 100 }}
                 >
                     <div>
                         <ImageField
@@ -74,7 +74,7 @@ export const ImgArrayContent = () => {
                             {/* <div>{img.id}</div> */}
 
                             <motion.div
-                                initial={{ opacity: 0, y: 100 }}
+                                initial={{ opacity: 0, y: 60 }}
                                 animate={{ opacity: 1, y: 50 }}
                                 transition={{ duration: 0.5, ease: 'easeInOut', type: 'spring', stiffness: 100 }}
 

@@ -112,6 +112,35 @@ input::placeholder {
   }
 }
 
+.About_text {
+  font-family: Recoleta, Georgia, sans-serif
+}
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transform-origin: top;
+}
+
+.slide-into {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 9999;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: "Roslindale Display Condensed";
+  align-items: center;
+  background: rgb(13, 13, 13);
+  transform-origin: bottom;
+}
+
 .content_container {
   background: linear-gradient(170.7deg, #f4f4f0 60%, #f4f4f0 40%);
 }
@@ -132,6 +161,12 @@ input::placeholder {
 .text-area p {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
 
 
