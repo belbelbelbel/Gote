@@ -81,7 +81,7 @@ export default function Signup({setCraeteAccountModal}:any){
             <ButtonField type="submit" label="Create Account" width="xl:w-full w-[78%]" />
           </div>
         </form>
-        <div className='mt-3'>Already have an account ? <span className='underline cursor-pointer leading-0 tracking-0 ' onClick={() => setCraeteAccountModal(false)}>Sign in</span> </div>
+        <div className='mb-8 xl:mt-2'>Already have an account ? <span className='underline cursor-pointer leading-0 tracking-0 ' onClick={() => setCraeteAccountModal(false)}>Sign in</span> </div>
       </div>
     </div>
   );

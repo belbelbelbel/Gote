@@ -77,7 +77,7 @@ export default function Signin() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', damping: 10, stiffness: 50 }}
             exit={{ opacity: 0, y: 300 }}
-            className='flex flex-col gap-2 overflow-auto xl:pt-0  pt-[8rem] Account_slide  h-full inset-0 absolute md:fixed w-full  bg-[#f4f4f0] justify-center items-center text-center mx-auto' >
+            className='flex flex-col gap-2 overflow-auto xl:pt-10  md:pt-[10rem] Account_slide  h-full inset-0 absolute md:fixed w-full  bg-[#f4f4f0] justify-center items-center text-center mx-auto' >
             <Signup  setCraeteAccountModal={setCraeteAccountModal}/> 
           </motion.div>
         }
