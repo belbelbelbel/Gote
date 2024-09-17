@@ -150,6 +150,9 @@ input::placeholder {
   background: linear-gradient(170.7deg, #f4f4f0 60%, #f4f4f0 40%);
 }
 
+li{
+  list-style-type: none;
+}
 .text-area {
   text-align: center;
   padding: 2rem;
