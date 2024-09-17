@@ -16,10 +16,10 @@ export const Faqs = () => {
                     <div key={item.id} className='flex flex-col mt-6  justify-between cursor-pointer' onClick={() => handleClick(item.id)}>
                         <div className='flex items-center justify-between'>
                             <div className='py-4'>
-                                <h2 className='font-bold text-[1rem]'>{item.question}</h2>
+                                <h2 className='font-bold text-[1.2rem]'>{item.question}</h2>
                             </div>
                             <div className='cursor-pointer' >
-                                {answer === item.id ? <FaCircleMinus className='text-red-400' /> : <FaCirclePlus />}
+                                {answer === item.id ? <FaCircleMinus className='text-red-400 ' /> : <FaCirclePlus />}
                             </div>
                         </div>
                         <AnimatePresence>
@@ -30,7 +30,7 @@ export const Faqs = () => {
                                     transition={{ duration: 0.5 }}
                                     exit={{ opacity: 0, height: 0 }}
                                     className='relative block'>
-                                    <div className='absolute md:text-[1rem]  text-[0.6rem] '>{item.answer}</div>
+                                    <div className='absolute md:text-[1rem]  text-[0.8rem] '>{item.answer}</div>
                                 </motion.div>
                             )}
                         </AnimatePresence>

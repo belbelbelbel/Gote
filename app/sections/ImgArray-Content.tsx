@@ -5,6 +5,7 @@ import { ImgArray } from '../Utils/@datacontents';
 import { ImgArrrayProps } from '../Utils/@types';
 import toast, { Toaster } from 'react-hot-toast'
 import { ButtonField } from '../Component/ButtonField';
+import Link from 'next/link';
 
 export const ImgArrayContent = () => {
     const [imageContents, setImageContents] = useState<number | null>(null);
@@ -72,7 +73,6 @@ export const ImgArrayContent = () => {
                                 </svg>
                             </div>
                             {/* <div>{img.id}</div> */}
-
                             <motion.div
                                 initial={{ opacity: 0, y: 60 }}
                                 animate={{ opacity: 1, y: 50 }}
@@ -80,7 +80,9 @@ export const ImgArrayContent = () => {
 
                                 className='items-center  flex-col  md:gap-4 flex w-[90%] justify-center'>
                                 <div className='text-[1rem] text-center'>{img.description}</div>
-                                <button className='bg-black text-[1rem] hover:bg-opacity-80  rounded-[8px] h-[6vh]  w-[70%] mx-auto h-[5vh]'>See More</button>
+                                <Link href='/shop' className='w-full flex items-center justify-center'>
+                                    <button className='bg-black text-[1rem] hover:bg-opacity-80  rounded-[8px] h-[6vh]  w-[70%] mx-auto h-[5vh]'>See More</button>
+                                </Link>
                             </motion.div>
                         </motion.div>
                     )}

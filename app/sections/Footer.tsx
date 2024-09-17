@@ -9,6 +9,7 @@ import { InputFields } from '../Component/InputFields';
 import { ButtonField } from '../Component/ButtonField';
 import toast, { Toaster } from 'react-hot-toast';
 import { HoverFooterCard } from './HoverFooterCard';
+import { usePathname } from 'next/navigation';
 export const Footer = () => {
   const [email, setEmail] = useState('')
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
@@ -16,6 +17,12 @@ export const Footer = () => {
     toast.success('Subscrition Successfull')
     setEmail('')
   }
+  const location = usePathname();
+
+  const handleActiveLocation = (itemHref: string) => {
+    return location === itemHref ? 'text-black font-extrabold' : 'text-black font-medium';
+  };
+
   return (
     <div className='w-screen xl:h-[70%]  bg-[#f4f4f0]'>
       <Toaster />
@@ -29,17 +36,23 @@ export const Footer = () => {
       <div className='flex xl:flex-row gap-8  flex-col w-[85%] mx-auto mt-10 justify-between'>
         <ul className="flex gap-8 items-center flex-col leading-[8px]">
           {FooterItems.map((item, index) => (
-            <li key={index} className="cursor-pointer">
-              <a href={item.href} className='text-[0.8rem] tracking-[3px] '>{item.name}</a>
+            <li key={index} className="cursor-pointer hover:underline">
+              <a href={item.href} className={`text-[0.8rem] tracking-[3px] ${handleActiveLocation(item.href)} `}>{item.name}</a>
             </li>
           ))}
         </ul>
-        <div className='items-center flex   flex-col relative gap-8'>
+        <div className='items-center flex   flex-col relative gap-8' >
           <div className='relative flex item-center justify-center mb-2  text-center'>
             <div className='flex items-center  absolute gap-20'>
-              <div><IoLogoTwitter className='text-[1.8rem] cursor-pointer' /></div>
-              <div><FaPinterest className='text-[1.8rem] cursor-pointer' /></div>
-              <div><FaInstagramSquare className='text-[1.8rem] cursor-pointer' /></div>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                <div><IoLogoTwitter className='text-[1.8rem] cursor-pointer' /></div>
+              </a>
+              <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">
+                <div><FaPinterest className='text-[1.8rem] cursor-pointer' /></div>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <div><FaInstagramSquare className='text-[1.8rem] cursor-pointer' /></div>
+              </a>
             </div>
           </div>
           <div>
@@ -64,8 +77,8 @@ export const Footer = () => {
         <div className='pb-8'>
           <ul className="flex gap-8 items-center flex-col leading-[8px]">
             {FooterItems2.map((item, index) => (
-              <li key={index} className="cursor-pointer">
-                <a href={item.href} className='text-[0.8rem] tracking-[3px] '>{item.name}</a>
+              <li key={index} className="cursor-pointer hover:underline">
+                <a href={item.href} className={`text-[0.8rem] tracking-[3px] ${handleActiveLocation(item.href)}`} >{item.name}</a>
               </li>
             ))}
           </ul>

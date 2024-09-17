@@ -14,7 +14,7 @@ export default function NavbarrRoutes() {
     <div>
       <ul className="flex gap-8 items-center">
         {navItems.map((item, index) => (
-          <li key={index} className="cursor-pointer">
+          <li key={index} className="cursor-pointer hover:underline ">
             <a 
               href={item.href} 
               className={handleActiveLocation(item.href)}
