@@ -11,19 +11,21 @@ import { Footer } from '../sections/Footer'
 export default function PurchasePage() {
     const videoRef = useRef(null);
 
-
+    // className='video-background'
+    // src={"/videos/herovideo1.mp4"}
     return (
         <div className='w-screen xl:h-[100vh] h-[200vh] overflow-auto'>
             <Header />
             <div className='video-container'>
                 <video
+                    preload='none'
                     ref={videoRef}
                     className='video-background'
-                    src={"/videos/herovideo1.mp4"}
                     autoPlay
                     loop
                     muted
                 >
+                    <source src="/videos/herovideo1.mp4" type="video/mp4" />
                 </video>
                 <div className='video-overlay'>
                     <h1 className='slogan'>
@@ -43,7 +45,7 @@ export default function PurchasePage() {
                 </motion.div>
                 <ImgArrayContent />
             </div>
-            <Footer/>
+            <Footer />
         </div>
     )
 }
