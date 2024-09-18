@@ -1,14 +1,28 @@
 "use client"
-import React from 'react'
+import React, { useContext } from 'react'
 import { Header } from '../sections/Header'
 import { Transition } from '../Utils/Transition'
 import { cartProducts } from '../Utils/@datacontents'
 import { ImageField } from '../Component/ImageField'
 import { Footer } from '../sections/Footer'
 import { ButtonField } from '../Component/ButtonField'
+import { ContextApi } from '@/Provider/UseContext'
+import toast, { Toaster } from 'react-hot-toast'
+
 const ShoPage = () => {
+  const context = useContext(ContextApi)
+  const {cart,setCart}:any = context
+  const handleAddedProcuts = () => {
+    setCart([...cart, cartProducts])
+    if(cart.length > 0) {
+      toast.success("item added to cart")
+    }
+    console.log(cart)
+  }
+  console.log(cart.length)
   return (
     <div className='w-screen h-screen flex flex-col gap-20  '>
+      <Toaster/>
       <div className='relative'>
         <Header />
       </div>
@@ -26,7 +40,7 @@ const ShoPage = () => {
               />
               <h1>{items.description}</h1>
               <p>Price: ${items.price}</p>
-              <ButtonField label={'Add to cart'} width='w-full' type="button"/>  
+              <ButtonField label={'Add to cart'} width='w-full' type="button" onClick={handleAddedProcuts}/>  
             </div>
           ))
         }

@@ -59,4 +59,5 @@ export type buttonFields = {
     label: string,
     width: string,
     type: "reset" | "submit" | "button" | undefined,
+    onClick?: () => void,
 }

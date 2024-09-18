@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { ImageField } from '../Component/ImageField'
 import Image from 'next/image'
 import NavbarrRoutes from '../Auth/NavbarRoutes/NavbarRotes'
@@ -8,8 +8,11 @@ import { motion } from 'framer-motion';
 import { ImgArrayContent } from '../sections/ImgArray-Content'
 import { Header } from '../sections/Header'
 import { Footer } from '../sections/Footer'
+import { ContextApi } from '@/Provider/UseContext'
 export default function PurchasePage() {
     const videoRef = useRef(null);
+    const context = useContext(ContextApi)
+    console.log(context?.cart.length)
     return (
         <div className='w-screen xl:h-[100vh] h-[200vh] overflow-auto'>
             <Header />
