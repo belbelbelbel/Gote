@@ -9,21 +9,28 @@ interface DataProps {
 export const ContextApi = createContext<DataProps | null>(null);
 
 export const UseContext = ({ children }: { children: ReactNode }) => {
-  const getInitialCart = () => {
-    if ( (window as any) !== 'undefined') {
-      const storedCart = localStorage.getItem('cart');
-      return storedCart ? JSON.parse(storedCart) : [];
-    }
-    return [];
-  };
+  
+  // Initialize cart state
+  const [cart, setCart] = useState<string[]>([]);
 
-  const [cart, setCart] = useState<string[]>(getInitialCart);
-
+  // Fetch the cart from localStorage when the component mounts
   useEffect(() => {
-    if (cart.length > 0) { 
-      localStorage.setItem('cart', JSON.stringify(cart));
-    } else {
-      localStorage.removeItem('cart'); 
+    if (globalThis?.localStorage) {
+      const storedCart = globalThis.localStorage.getItem('cart');
+      if (storedCart) {
+        setCart(JSON.parse(storedCart));
+      }
+    }
+  }, []);  // Empty dependency array to only run this effect on mount
+  
+  // Persist cart changes to localStorage whenever `cart` changes
+  useEffect(() => {
+    if (globalThis?.localStorage) {
+      if (cart.length > 0) {
+        globalThis.localStorage.setItem('cart', JSON.stringify(cart));
+      } else {
+        globalThis.localStorage.removeItem('cart');
+      }
     }
   }, [cart]);
 

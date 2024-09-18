@@ -15,7 +15,7 @@ export const useApiRequest = () => {
       setisloading(true);
       setError(null);
       setData(null);
-      
+
       try {
         const response = await fetch(url, {
           method: 'POST',
@@ -38,8 +38,9 @@ export const useApiRequest = () => {
           toast.error(`HTTP error! status: ${response.status}`);
         }
         else {
-          toast.success('Logged in successfully')
           Router.push('/')
+          toast.success('Logged in successfully')
+        
         }
       }
 
