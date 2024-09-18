@@ -23,7 +23,9 @@ export const Header = () => {
             <div className=' md:flex hidden  items-center gap-6'>
                 <div className='cursor-pointer'><Link href="Auth/auths">Account</Link></div>
                 <div className='flex font-medium justify-center items-center gap-8 cursor-pointer'>
-                    <div><FaCartArrowDown className='text-[1.8rem]' /></div>
+                    <Link href="/cart">
+                        <div><FaCartArrowDown className='text-[1.8rem]' /></div>
+                    </Link>
                     <div className='border-2 border-black hover:border-green-800 transition ease-in duration-500 text-center xl:py-[0.5rem] py-[0.6rem] rounded-full w-[3rem] xl:w-[2.65rem] font-bold'>0</div>
                 </div>
             </div>

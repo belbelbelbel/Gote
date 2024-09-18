@@ -2,20 +2,21 @@
 import { ButtonField } from '@/app/Component/ButtonField'
 import { FormData, isFormFilled } from '@/app/Utils/@types'
 import { InputFields } from '@/app/Component/InputFields'
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { AnimatePresence, motion } from 'framer-motion'
 import Signup from '../signup/page'
 import { useRouter } from 'next/navigation'
 import { ImageField } from '@/app/Component/ImageField'
-
+import { useApiRequest } from '@/app/Hooks/useApiRequest'
 export default function Signin() {
   const [formData, setFormdata] = useState<FormData | any>({
     email: '',
     password: '',
   })
-  const Router = useRouter()
+
   const [createAccountModal, setCraeteAccountModal] = useState(false)
+  const { makeRequest, isloading, error, data } = useApiRequest();
 
   const handleToggleCreateAccountModal = () => {
     setCraeteAccountModal(!createAccountModal)
@@ -26,21 +27,14 @@ export default function Signin() {
     const { name, value } = e.target
     setFormdata({ ...formData, [name]: value })
   }
-  const isFilledForm = isFormFilled(formData);
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!isFilledForm) {
-      toast.error("please fill in all form")
-      return;
-    }
-    else {
-      toast.success('Logged in successfully')
-      Router.push('/')
-      setFormdata({ email: '', password: '' })
-    }
-    console.log('Form submitted with data:', formData)
+    makeRequest('https://reqres.in/api/register', formData, formData)
   }
+
+
 
   return (
 
@@ -64,7 +58,7 @@ export default function Signin() {
             <InputFields type='password' width='xl:w-[40%] w-[80%]' name='password' placeholder='E.g Steword12#$%' value={formData.password} onChange={handleInputChange} />
           </div>
           <div className='w-full  items-center  justify-center  flex text-white'>
-            <ButtonField type="submit" label="Sign in" width="xl:w-[40%] w-[78%]" />
+            <ButtonField type="submit" label={!isloading ? "Sign in" : "Please wait.."} width="xl:w-[40%] w-[78%]" />
           </div>
           <div>New account? <span className='underline cursor-pointer leading-0 tracking-0' onClick={handleToggleCreateAccountModal}>Sign Up</span> </div>
         </form>
@@ -78,7 +72,7 @@ export default function Signin() {
             transition={{ type: 'spring', damping: 10, stiffness: 50 }}
             exit={{ opacity: 0, y: 300 }}
             className='flex flex-col gap-2 overflow-auto xl:pt-10  md:pt-[10rem] Account_slide  h-full inset-0 absolute md:fixed w-full  bg-[#f4f4f0] justify-center items-center text-center mx-auto' >
-            <Signup  setCraeteAccountModal={setCraeteAccountModal}/> 
+            <Signup setCraeteAccountModal={setCraeteAccountModal} />
           </motion.div>
         }
       </AnimatePresence>

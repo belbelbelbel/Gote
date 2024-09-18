@@ -314,6 +314,29 @@ export const returnsExchangeInfo = [
   },
 ];
 
+export const cartProducts = [
+  { id: 1, imageUrl: '/images/cartimg1.jpg', description: 'Stylish Modern Chair', price: 120.00 },
+  { id: 2, imageUrl: '/images/cartimg2.jpg', description: 'Wooden Dining Table', price: 250.00 },
+  { id: 3, imageUrl: '/images/cartimg3.jpg', description: 'Comfortable Sofa', price: 499.99 },
+  { id: 4, imageUrl: '/images/cartimg4.jpg', description: 'Elegant Floor Lamp', price: 75.50 },
+  { id: 6, imageUrl: '/images/cartimg6.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 7, imageUrl: '/images/cartimg7.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 8, imageUrl: '/images/cartimg8.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 9, imageUrl: '/images/cartimg9.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 10, imageUrl: '/images/cartimg10.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 11, imageUrl: '/images/cartimg11.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 12, imageUrl: '/images/cqrtimg6.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 13, imageUrl: '/images/cartimg13.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 14, imageUrl: '/images/cartimg14.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 15, imageUrl: '/images/cartimg15.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 16, imageUrl: '/images/cartimg16.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 17, imageUrl: '/images/cartimg17.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 18, imageUrl: '/images/cartimg18.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 18, imageUrl: '/images/purchase-content6.jpg', description: 'Wall Art - Abstract', price: 60.00 },
+  { id: 18, imageUrl: '/images/purchase-content4.jpg', description: 'Wall Arteticula - Abstract', price: 60.00 },
+  { id: 3, imageUrl: '/images/cartimg3.jpg', description: 'Comfortable Sofa', price: 499.99 },
+];
+
 
 
 
