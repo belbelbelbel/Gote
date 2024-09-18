@@ -12,17 +12,17 @@ const ShoPage = () => {
       <div className='relative'>
         <Header />
       </div>
-      <div className='w-[88%] xl:mt-10 mx-auto flex  items-center justify-center md:mt-32 flex-wrap gap-20'>
+      <div className='w-[88%] xl:w-[88%] md:w-full xl:mt-10 mx-auto flex  items-center justify-center md:mt-32 flex-wrap gap-20'>
         {
           cartProducts.map((items) => (
-            <div key={items.id} className=' w-[20vw] mt-6 h-[10h]'>
+            <div key={items.id} className=' xl:w-[20vw] md:w-[30vw] mt-6 h-[10h]'>
               <ImageField src={items.imageUrl} alt={items.description}
                 sizes={''}
                 objectFit={"cover"}
                 width={400}
                 height={200}
                 priority={true}
-                className='cursor-pointer z-20 xl:w-[22.5vw] xl:h-[42vh] md:h-[46vh]  md:w-[29rem]  w-[70vw] h-[43vh] rounded-[15px]'
+                className='cursor-pointer z-20 xl:w-[22.5vw] xl:h-[42vh] md:h-[37vh]  md:w-[35rem]  w-[70vw] h-[43vh] rounded-[15px]'
               />
               <h1>{items.description}</h1>
               <p>Price: ${items.price}</p>

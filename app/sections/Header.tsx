@@ -14,7 +14,7 @@ export const Header = () => {
                     </Link>
                     {/* <img src="/images/gote-logo-removebg.png" alt="logo"  width={135} height={50} /> */}
                 </div>
-                <div className=' '>
+                <div className=''>
                     <div className=''>
                         <NavbarrRoutes />
                     </div>
