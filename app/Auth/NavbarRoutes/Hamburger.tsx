@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Hamburger.css"; // Import your CSS styles
-import { navItems } from "@/app/Utils/@datacontents";
+import { cartProducts, navItems } from "@/app/Utils/@datacontents";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { ContextApi } from "@/Provider/UseContext";
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const context = useContext(ContextApi)
     const location = usePathname()
-
+    const {cart}:any = context
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -45,7 +47,8 @@ const HamburgerMenu = () => {
     return (
         <div className="">
             {/* Hamburger Icon */}
-            <div className="hamburger-container" onClick={toggleMenu}>
+            <div className="hamburger-container relative " onClick={toggleMenu}>
+                <div className="absolute right-0 font-bold text-xl -top-2">{cart.length}</div>
                 <svg
                     className={`hamburger ${isOpen ? 'open' : ''}`}
                     width="40"
@@ -58,7 +61,7 @@ const HamburgerMenu = () => {
                 </svg>
             </div>
             <AnimatePresence>
-                {isOpen && (
+                {isOpen && (  
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -79,8 +82,8 @@ const HamburgerMenu = () => {
                             </motion.li>
                         ))}
                         <div className="mt-6 flex flex-col justify-center gap-6">
-                            <Link href="Auth/auths" className="text-[1.2rem]">Account</Link>
-                            <Link href="" className="text-[1.2rem]">Cart</Link>
+                            <Link href="Auth/auths" className="text-[1.1rem]">Account</Link>
+                            <Link href="/cart" className="text-[1.1rem]">Cart</Link>
                         </div>
                     </motion.div>
                 )}

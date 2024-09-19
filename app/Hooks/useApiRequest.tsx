@@ -32,6 +32,7 @@ export const useApiRequest = () => {
 
         const jsonResponse = await response.json();
         console.log(jsonResponse)
+        localStorage.setItem('token', jsonResponse.token)
         setData(jsonResponse);
 
         if (!response.ok) {

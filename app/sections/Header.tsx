@@ -8,6 +8,7 @@ import { ContextApi } from '@/Provider/UseContext';
 export const Header = () => {
     const context = useContext(ContextApi)
     const { cart }:any = context
+   const token  =  localStorage.getItem('token')
     return (
         <div className='fixed px-8 w-full flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[14vh]'>
             <div className='flex items-center justify-between w-full md:w-[60%]'>
@@ -24,7 +25,19 @@ export const Header = () => {
                 </div>
             </div>
             <div className=' md:flex hidden  items-center gap-6'>
-                <div className='cursor-pointer'><Link href="Auth/auths">Account</Link></div>
+                <div className='cursor-pointer'>
+                    {
+                        token ? (
+                            // <Link href='/'>
+                                <div className='text-green-800 hover:text-green-500' onClick={() => localStorage.removeItem('token')}>Logout</div>
+                            // </Link>
+                        ) : (
+                            <Link href='/login'>
+                                <div className='text-green-800 hover:text-green-500'>Account</div>
+                            </Link>
+                        )
+                    }
+                </div>
                 <div className='flex font-medium justify-center items-center gap-8 cursor-pointer'>
                     <Link href="/cart">
                         <div><FaCartArrowDown className='text-[1.8rem]' /></div>
