@@ -12,12 +12,15 @@ import toast, { Toaster } from 'react-hot-toast'
 const ShoPage = () => {
   const context = useContext(ContextApi)
   const {cart,setCart}:any = context
-  const handleAddedProcuts = () => {
-    setCart([...cart, cartProducts])
-    if(cart.length > 0) {
+  const handleAddedProcuts = (id:number) => {
+    const updatedProducts = cartProducts.find((product) => product.id === id)
+   
+    if(cart.some((product:any) => product.id === id)) {
+      toast.error("item already in cart")
+    }  else {
+      setCart([...cart, updatedProducts]) 
       toast.success("item added to cart")
-    }
-    console.log(cart)
+    }  console.log(cart)
   }
   console.log(cart.length)
   return (
@@ -40,7 +43,7 @@ const ShoPage = () => {
               />
               <h1>{items.description}</h1>
               <p>Price: ${items.price}</p>
-              <ButtonField label={'Add to cart'} width='w-full' type="button" onClick={handleAddedProcuts}/>  
+              <ButtonField label={'Add to cart'} width='w-full' type="button" onClick={()=>handleAddedProcuts(items.id)}/>  
             </div>
           ))
         }

@@ -10,10 +10,10 @@ export const ContextApi = createContext<DataProps | null>(null);
 
 export const UseContext = ({ children }: { children: ReactNode }) => {
   
-  // Initialize cart state
+
   const [cart, setCart] = useState<string[]>([]);
 
-  // Fetch the cart from localStorage when the component mounts
+
   useEffect(() => {
     if (globalThis?.localStorage) {
       const storedCart = globalThis.localStorage.getItem('cart');
@@ -21,9 +21,8 @@ export const UseContext = ({ children }: { children: ReactNode }) => {
         setCart(JSON.parse(storedCart));
       }
     }
-  }, []);  // Empty dependency array to only run this effect on mount
+  }, []);  
   
-  // Persist cart changes to localStorage whenever `cart` changes
   useEffect(() => {
     if (globalThis?.localStorage) {
       if (cart.length > 0) {
