@@ -7,8 +7,11 @@ import Link from 'next/link';
 import { ContextApi } from '@/Provider/UseContext';
 export const Header = () => {
     const context = useContext(ContextApi)
+    const token = ""
     const { cart }:any = context
-   const token  =  localStorage.getItem('token')
+   try {
+    const token  =  localStorage.getItem('token')
+   } catch (error) {}
     return (
         <div className='fixed px-8 w-full flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[14vh]'>
             <div className='flex items-center justify-between w-full md:w-[60%]'>
