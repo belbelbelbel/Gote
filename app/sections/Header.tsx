@@ -35,7 +35,7 @@ export const Header = () => {
                                 <div className='text-green-800 hover:text-green-500' onClick={() => localStorage.removeItem('token')}>Logout</div>
                             // </Link>
                         ) : (
-                            <Link href='/login'>
+                            <Link href='/Auth/auths'>
                                 <div className='text-green-800 hover:text-green-500'>Account</div>
                             </Link>
                         )
