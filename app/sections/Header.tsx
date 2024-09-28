@@ -13,7 +13,7 @@ export const Header = () => {
     const token  =  localStorage.getItem('token')
    } catch (error) {}
     return (
-        <div className='fixed px-8 w-full flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[14vh]'>
+        <div className='fixed px-8 w-ful flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[14vh]'>
             <div className='flex items-center justify-between w-full md:w-[60%]'>
                 <div className='cursor-pointer md:right-0 right-8 relative'>
                     <Link href='/'>
