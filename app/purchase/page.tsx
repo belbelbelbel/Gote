@@ -17,7 +17,7 @@ export default function PurchasePage() {
         <div className='w-screen xl:h-[100vh] h-[200vh] overflow-auto'>
             <Header />
             <div className='video-container'>
-                <video
+                {/* <video
                     preload='none'
                     ref={videoRef}
                     className='video-background'
@@ -26,7 +26,8 @@ export default function PurchasePage() {
                     muted
                 >
                     <source src="/videos/herovideo1.mp4" type="video/mp4" />
-                </video>
+                </video> */}
+                <Image src="/images/hero-img.jpg" alt={'hero-image'} className='' objectFit='cover'  width={1700} height={1700} priority={true}/>
                 <div className='video-overlay'>
                     <h1 className='slogan'>
                         Uncover Unique Products and Unbeatable Prices – Shop Now!
