@@ -60,7 +60,7 @@ export default function Signup({setCraeteAccountModal}:any){
       <div>
         <form className='flex flex-col gap-12' onSubmit={handleFormSubmit}>
           <div>
-            <div className='flex gap-8 xl:flex-row flex-col'>
+            <div className='flex xl:gap-8 xl:flex-row flex-col'>
               <InputFields value={formData.lastName} name='lastName' type='text' placeholder="E.g Bendee" onChange={handleInputChange} width='xl:w-[60%] w-[80%]' />
               <InputFields value={formData.firstName} name='firstName' type='text' placeholder='E.g Agozie' onChange={handleInputChange} width='xl:w-[60%] w-[80%]' />
             </div>
@@ -68,11 +68,11 @@ export default function Signup({setCraeteAccountModal}:any){
               <InputFields value={formData.email} name='email' type='email' placeholder="E.g Bendee@gmail.com" onChange={handleInputChange} width='xl:w-[100%] w-[80%]' />
             </div>
 
-            <div className='flex gap-8 xl:flex-row flex-col'>
+            <div className='flex xl:gap-8 xl:flex-row flex-col'>
               <InputFields value={formData.phonenumber} name='phonenumber' type='text' placeholder="E.g +234 8993322234 " onChange={handleInputChange} width='xl:w-[60%] w-[80%]' />
               <InputFields value={formData.address} name='address' type='text' placeholder='E.g Fegge Onitsha' onChange={handleInputChange} width='xl:w-[60%] w-[80%]' />
             </div>
-            <div className='flex gap-8 xl:flex-row flex-col'>
+            <div className='flex xl:gap-8 xl:flex-row flex-col'>
               <InputFields value={formData.password} name='password' type='text' placeholder="E.g Steword12#$%'" onChange={handleInputChange} width='xl:w-[60%] w-[80%]' />
               <InputFields value={formData.confirmPassword} name='confirmPassword' type='text' placeholder='Confirm#password' onChange={handleInputChange} width='xl:w-[60%] w-[80%]' />
             </div>
@@ -81,7 +81,7 @@ export default function Signup({setCraeteAccountModal}:any){
             <ButtonField type="submit" label="Create Account" width="xl:w-full w-[78%]" />
           </div>
         </form>
-        <div className='mb-8 xl:mt-2'>Already have an account ? <span className='underline cursor-pointer leading-0 tracking-0 ' onClick={() => setCraeteAccountModal(false)}>Sign in</span> </div>
+        <div className='mb-32 xl:mt-2'>Already have an account ? <span className='underline cursor-pointer leading-0 tracking-0 ' onClick={() => setCraeteAccountModal(false)}>Sign in</span> </div>
       </div>
     </div>
   );
