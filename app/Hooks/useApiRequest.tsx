@@ -41,19 +41,14 @@ export const useApiRequest = () => {
         else {
           Router.push('/')
           toast.success('Logged in successfully')
-        
         }
       }
-
       catch (err: any) {
         setError(err.message);
       }
-
       finally {
         setisloading(false);
       }
-     
     }
-
     return { isloading, data, error, makeRequest }
 }

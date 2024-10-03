@@ -34,8 +34,9 @@ export type FormDataCreateAcount = {
     address: string,
 }
 
+
+
 export const isFormFilled = (formData: Record<string, string>): boolean => {
-    // Check if all values in the formData are truthy (i.e., not empty or undefined)
     return Object.values(formData).every((value) => value.trim() !== '');
 };
 

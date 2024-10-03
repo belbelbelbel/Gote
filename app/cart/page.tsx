@@ -5,6 +5,7 @@ import { ImageField } from '../Component/ImageField';
 import { ContextApi } from '@/Provider/UseContext';
 import { Footer } from '../sections/Footer';
 import toast, { Toaster } from 'react-hot-toast';
+import Link from 'next/link';
 
 const CartPage = () => {
     const { cart, setCart }: any = useContext(ContextApi);
@@ -55,19 +56,22 @@ const CartPage = () => {
                             const itemTotalPrice = item.price * itemQuantity;
 
                             return (
-                                <div key={item.id} className='xl:w-full flex flex-col items-center justify-between md:w-[30vw]'>
+                                <div key={item.id} className='xl:w-full flex flex-col items-center justify-between md:w-full'>
                                     <div className='w-full h-[1px] bg-black'></div>
-
-                                    <div className='xl:w-full flex xl:flex-row flex-col gap-6 xl:gap-0 xl:mt-4 mt-10 items-center justify-between md:w-[30vw]'>
+                                    {/* <Link href={`${item.id}`} className='w-full xl:w-full cursor-pointer flex xl:flex-row flex-col gap-6 xl:gap-0 xl:mt-4 mt-10 items-center justify-between md:w-full'> */}
+                                    <div className='xl:w-full cursor-pointer flex xl:flex-row flex-col gap-6 xl:gap-0 xl:mt-4 mt-10 items-center justify-between md:w-full' >
                                         {/* Image */}
-                                        <ImageField
-                                            src={item.imageUrl}
-                                            alt={item.description}
-                                            objectFit="cover"
-                                            width={200}
-                                            height={200}
-                                            priority={true}
-                                            className='cursor-pointer z-20 xl:w-[13.5vw] xl:h-[22vh] md:h-[37vh] md:w-[35rem] w-[70vw] h-[43vh] rounded-[15px]' sizes={''} />
+
+                                        <Link href={`/payment/${item.description}`}>
+                                            <ImageField
+                                                src={item.imageUrl}
+                                                alt={item.description}
+                                                objectFit="cover"
+                                                width={200}
+                                                height={200}
+                                                priority={true}
+                                                className='cursor-pointer z-20 xl:w-[13.5vw] xl:h-[22vh] md:h-[37vh] md:max-w-full w-[70vw] h-[43vh] rounded-[15px]' sizes={''} />
+                                        </Link>
 
                                         {/* Description */}
                                         <div className='ml-4'>
@@ -96,7 +100,7 @@ const CartPage = () => {
 
                                             {/* Updated Price */}
                                             <div className='relative xl:w-[10vw]  w-[16vw] -top-3'>
-                                                <p className='font-bold absolute xl:text-xl text-[3.4vw]'>
+                                                <p className='font-bold absolute xl:text-xl md:text-[2vw] text-[3.5vw]'>
                                                     Price: ${itemTotalPrice.toFixed(2)}
                                                 </p>
                                             </div>
