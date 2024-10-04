@@ -62,7 +62,10 @@ const CartPage = () => {
                                     <div className='xl:w-full cursor-pointer flex xl:flex-row flex-col gap-6 xl:gap-0 xl:mt-4 mt-10 items-center justify-between md:w-full' >
                                         {/* Image */}
 
-                                        <Link href={`/payment/${item.description}`}>
+                                        {/* <Link href={{
+                                            pathname: `/payment/${item.description}`,
+                                           query: { data: JSON.stringify(item)}
+                                        }}> */}
                                             <ImageField
                                                 src={item.imageUrl}
                                                 alt={item.description}
@@ -71,7 +74,7 @@ const CartPage = () => {
                                                 height={200}
                                                 priority={true}
                                                 className='cursor-pointer z-20 xl:w-[13.5vw] xl:h-[22vh] md:h-[37vh] md:max-w-full w-[70vw] h-[43vh] rounded-[15px]' sizes={''} />
-                                        </Link>
+                                        {/* </Link> */}
 
                                         {/* Description */}
                                         <div className='ml-4'>
@@ -80,6 +83,7 @@ const CartPage = () => {
 
                                         {/* Quantity and Price Controls */}
                                         <div className='flex items-center justify-center relative  gap-10'>
+                                            <button className='bg-black text-white p-2 text-[0.8rem] rounded-full'>Checkout</button>
                                             <div className='flex items-center w-auto'>
                                                 <button
                                                     className='border-2 border-black px-4 py-2'
