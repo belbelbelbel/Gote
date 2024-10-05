@@ -6,18 +6,21 @@ import { ContextApi } from '@/Provider/UseContext';
 import { Footer } from '../sections/Footer';
 import toast, { Toaster } from 'react-hot-toast';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const CartPage = () => {
     const { cart, setCart }: any = useContext(ContextApi);
     const [total, setTotal] = useState(0);
     const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
-
+    const router  = useRouter()
 
     const handleRemove = (id: number) => {
         const updatedCart = cart.filter((item: any) => item.id !== id);
         setCart(updatedCart);
         toast.error("removed item")
     };
+
+
 
 
     const handleAddQuantity = (id: number) => {
@@ -42,6 +45,18 @@ const CartPage = () => {
         setTotal(totalPrice);
     }, [cart, quantities]);
 
+    const handleCheckout = (title: string,total: number,img:any,description:string) => {
+        const provider:any = {
+            id: title,
+            description: description,
+            amount: total,
+            image: img
+        }
+        localStorage.setItem('item', JSON.stringify(provider))
+        router.push('/payment')
+    }
+
+
     return (
         <div className='h-screen w-screen flex flex-col  gap-20'>
             <Toaster />
@@ -54,26 +69,25 @@ const CartPage = () => {
                         cart.map((item: any) => {
                             const itemQuantity = quantities[item.id] || 1;
                             const itemTotalPrice = item.price * itemQuantity;
-
                             return (
                                 <div key={item.id} className='xl:w-full flex flex-col items-center justify-between md:w-full'>
                                     <div className='w-full h-[1px] bg-black'></div>
                                     {/* <Link href={`${item.id}`} className='w-full xl:w-full cursor-pointer flex xl:flex-row flex-col gap-6 xl:gap-0 xl:mt-4 mt-10 items-center justify-between md:w-full'> */}
-                                    <div className='xl:w-full cursor-pointer flex xl:flex-row flex-col gap-6 xl:gap-0 xl:mt-4 mt-10 items-center justify-between md:w-full' >
+                                    <div className='xl:w-full  flex xl:flex-row flex-col gap-6 xl:gap-0 xl:mt-4 mt-10 items-center justify-between md:w-full' >
                                         {/* Image */}
 
                                         {/* <Link href={{
                                             pathname: `/payment/${item.description}`,
                                            query: { data: JSON.stringify(item)}
                                         }}> */}
-                                            <ImageField
-                                                src={item.imageUrl}
-                                                alt={item.description}
-                                                objectFit="cover"
-                                                width={200}
-                                                height={200}
-                                                priority={true}
-                                                className='cursor-pointer z-20 xl:w-[13.5vw] xl:h-[22vh] md:h-[37vh] md:max-w-full w-[70vw] h-[43vh] rounded-[15px]' sizes={''} />
+                                        <ImageField
+                                            src={item.imageUrl}
+                                            alt={item.description}
+                                            objectFit="cover"
+                                            width={200}
+                                            height={200}
+                                            priority={true}
+                                            className='cursor-pointer z-20 xl:w-[13.5vw] xl:h-[22vh] md:h-[37vh] md:max-w-full w-[70vw] h-[43vh] rounded-[15px]' sizes={''} />
                                         {/* </Link> */}
 
                                         {/* Description */}
@@ -83,7 +97,7 @@ const CartPage = () => {
 
                                         {/* Quantity and Price Controls */}
                                         <div className='flex items-center justify-center relative  gap-10'>
-                                            <button className='bg-black text-white p-2 text-[0.8rem] rounded-full'>Checkout</button>
+         
                                             <div className='flex items-center w-auto'>
                                                 <button
                                                     className='border-2 border-black px-4 py-2'
@@ -101,10 +115,9 @@ const CartPage = () => {
                                                     -
                                                 </button>
                                             </div>
-
                                             {/* Updated Price */}
                                             <div className='relative xl:w-[10vw]  w-[16vw] -top-3'>
-                                                <p className='font-bold absolute xl:text-xl md:text-[2vw] text-[3.5vw]'>
+                                                <p className='font-bold absolute xl:text-[0.9rem] md:text-[2vw] text-[3.5vw]'>
                                                     Price: ${itemTotalPrice.toFixed(2)}
                                                 </p>
                                             </div>
@@ -117,6 +130,7 @@ const CartPage = () => {
                                                 x
                                             </button>
                                         </div>
+                                        <button className='bg-black text-white cursor-pointer p-3 text-[0.8rem] rounded-full text-[1rem] w-full md:w-auto' onClick={() => handleCheckout(item.id,itemTotalPrice,item.imageUrl,item.description)}>Checkout</button>
                                     </div>
                                 </div>
                             );
