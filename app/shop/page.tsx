@@ -39,7 +39,7 @@ const ShoPage = () => {
                 width={400}
                 height={200}
                 priority={true}
-                className='cursor-pointer z-20 xl:w-[22.5vw] xl:h-[42vh] md:h-[37vh]  md:w-[35rem]  w-[70vw] h-[43vh] rounded-[15px]'
+                className='cursor-pointer z-20 xl:w-[22.5vw] xl:h-[42vh] md:h-[37vh]  md:w-[35rem]  w-[70vw] h-[35vh] rounded-[15px]'
               />
               <h1 className='font-bold text-xl mt-2'>{items.description}</h1>
               <p className='font-bold '>Price: ${items.price}</p>

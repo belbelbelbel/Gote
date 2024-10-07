@@ -31,7 +31,7 @@ export const FormCheckout = () => {
     }
     
     return (
-        <div className='flex flex-col justify-center   items-center h-full xl:w-[80%] mx-auto'>
+        <div className='flex flex-col justify-center   items-center h-full xl:w-[80%]  w-full mx-auto'>
             <form className='w-full justify-center gap-12 flex flex-col items-center' onSubmit={handleSubmit}>
                 <div className='w-full justify-center flex flex-col gap-4 items-center'>
                     <InputFields type='email' width='xl:w-[100%] w-[100%]' name='email' placeholder='E.g Bendee@gmail.com' value={contactData.email} onChange={handleInputChange} />
