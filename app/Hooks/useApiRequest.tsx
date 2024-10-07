@@ -38,10 +38,12 @@ export const useApiRequest = () => {
         if (!response.ok) {
           toast.error(`HTTP error! status: ${response.status}`);
         }
+        
         else {
           Router.push('/')
           toast.success('Logged in successfully')
         }
+
       }
       catch (err: any) {
         setError(err.message);

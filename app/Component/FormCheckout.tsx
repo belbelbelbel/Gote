@@ -25,7 +25,7 @@ export const FormCheckout = () => {
           return;
         }
         else { 
-          toast.success('Message sent successfully')
+          toast.success('Ready To Checkout')
           setContactData({ email: '', message: '' })
         }
     }
