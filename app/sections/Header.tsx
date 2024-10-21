@@ -7,17 +7,14 @@ import Link from 'next/link';
 import { ContextApi } from '@/Provider/UseContext';
 export const Header = () => {
     const context = useContext(ContextApi)
-    const token = ""
     const { cart }:any = context
-   try {
-    const token  =  localStorage.getItem('token')
-   } catch (error) {}
+    const token = globalThis?.localStorage?.getItem('token')
     return (
         <div className='fixed px-8 w-full flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[14vh]'>
             <div className='flex items-center justify-between w-full md:w-[60%]'>
-                <div className='cursor-pointer md:right-0 right-8 relative'>
-                    <Link href='/'>
-                        <Image src={'/images/gote-logo-removebg.png'} alt='Logo' width={135} height={50} priority={true} sizes={''} objectFit={'cover'} />
+                <div className='cursor-pointer md:right-0 border-0 outline-0 right-8 relative'>
+                    <Link href='/' className='border-0 outline-0'>
+                        <Image src={'/images/gote-logo-removebg.png'} alt='Logo' width={135} height={50} priority={true} sizes={''} objectFit={'cover'} className='outline-0 border-0' />
                     </Link>
                     {/* <img src="/images/gote-logo-removebg.png" alt="logo"  width={135} height={50} /> */}
                 </div>

@@ -9,11 +9,8 @@ interface DataProps {
 export const ContextApi = createContext<DataProps | null>(null);
 
 export const UseContext = ({ children }: { children: ReactNode }) => {
-  
 
   const [cart, setCart] = useState<string[]>([]);
-
-
   useEffect(() => {
     if (globalThis?.localStorage) {
       const storedCart = globalThis.localStorage.getItem('cart');
