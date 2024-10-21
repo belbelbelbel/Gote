@@ -27,7 +27,7 @@ export default function PurchasePage() {
                 >
                     <source src="/videos/herovideo1.mp4" type="video/mp4" />
                 </video> */}
-                <Image src="/images/hero-img.jpg" alt={'hero-image'} className='' objectFit='cover'  width={1700} height={1700} priority={true}/>
+                <Image src="/images/hero-img.jpg"  alt={'hero-image'} className='  h-full object-cover' objectFit='contain'  width={1700} height={100} priority={true}/>
                 <div className='video-overlay'>
                     <h1 className='slogan'>
                         Uncover Unique Products and Unbeatable Prices – Shop Now!
