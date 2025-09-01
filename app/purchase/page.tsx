@@ -104,7 +104,7 @@ export default function PurchasePage() {
             </section>
 
             {/* Testimonials Section */}
-            <section className="py-20 bg-gray-100">
+            <section className="py-20 bg-white">
                 <div className="max-w-5xl mx-auto px-6 text-center">
                     <h2 className="text-2xl md:text-3xl font-semibold">What Our Customers Say</h2>
                     <p className="text-gray-600 mt-3">Trusted by shoppers worldwide</p>
@@ -120,7 +120,7 @@ export default function PurchasePage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: idx * 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-white shadow-sm rounded-xl p-6"
+                                className="bg-gray-50 shadow-sm rounded-xl p-6"
                             >
                                 <p className="italic text-gray-700">“{t.text}”</p>
                                 <h4 className="mt-4 font-medium text-gray-900">- {t.name}</h4>
