@@ -33,7 +33,7 @@ export default function PurchasePage() {
                     </h1>
                 </div>
             </div>
-            <div className='content_container h-full w-[88%] items-center justify-center  mx-auto'>
+            <div className='content_container flex flex-col h-full w-[88%] items-center justify-center  mx-auto'>
                 <motion.div
                     className='text-area'
                     initial={{ opacity: 1, scale: 1 }}
