@@ -10,7 +10,7 @@ export const Header = () => {
     const { cart }:any = context
     const token = globalThis?.localStorage?.getItem('token')
     return (
-        <div className='fixed px-8 w-full flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[14vh]'>
+        <div className='fixed px-8 w-full flex z-50 bg-[#f4f4f0] items-center justify-between shadow-lg h-[6rem]'>
             <div className='flex items-center justify-between w-full md:w-[60%]'>
                 <div className='cursor-pointer md:right-0 border-0 outline-0 right-8 relative'>
                     <Link href='/' className='border-0 outline-0'>

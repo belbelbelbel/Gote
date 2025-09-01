@@ -23,7 +23,7 @@ export const Transition = (OgComponent: React.ComponentType, options?: { text?: 
               className="slide-into text-white text-[10vw] h-full text-center items-center justify-center"
               initial={{ y: 0 }}
               animate={{ y: 0 }}
-              exit={{ y: -700 }}
+              exit={{ y: -1000 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
             >
               <motion.div
